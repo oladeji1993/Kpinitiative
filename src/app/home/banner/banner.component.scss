@@ -1,0 +1,83 @@
+.image-back{
+    height:45em; 
+    background-size:cover;
+    width:auto;
+    background-image:url('/assets/images/bg3.jpg'),linear-gradient(rgba(60, 35, 46, 0.6), rgba(108, 69, 87, 0.6));
+    background-position:50% 50%;
+    background-blend-mode: overlay;
+    text-align: left;
+    // padding-top: 15%;
+    // opacity:1
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+ .overly-content i{
+    font-size:15px
+ } 
+
+
+#welcome{
+    color:White; 
+    font-weight:500; 
+    font-size:3rem;
+    // margin-bottom:10px; 
+    text-shadow: 2px 3px rgba(247, 5, 146, 0.5)
+}
+
+#welcome-text{
+    color:White; 
+    font-weight:bold; 
+    font-size:4rem;
+    // margin-bottom:40px; 
+    text-shadow: 2px 3px rgba(247, 5, 146, 0.5)
+}
+
+
+#action-btn a{
+    text-decoration: none;
+    color:#fff
+}
+
+#login a{
+    text-decoration: none;
+    color:#fff
+}
+
+#content{
+    overflow-y:scroll;         
+
+}
+
+.overly-content{
+    margin-left:35px
+}
+
+.icon i{
+    padding-right:10px;
+}
+
+@media (max-width: 700px) {
+    #welcome-text{
+        color:White; 
+        font-weight:bold; 
+        font-size:3rem;
+        // margin-bottom:40px; 
+        // text-shadow: 2px 3px rgba(250, 51, 6, 0.5)
+    }
+
+    
+#welcome{
+    color:White; 
+    font-weight:500; 
+    font-size:2rem;
+    // margin-bottom:10px; 
+    // text-shadow: 2px 3px rgba(250, 51, 6, 0.5)
+}
+
+#login{
+    margin-top:15px
+}
+
+}
