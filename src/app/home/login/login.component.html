@@ -3,15 +3,23 @@
 	<div class="card-body">
 		<h3 class="card-title text-center"  style="font-size: 30px; font-weight: bold; ">Log in</h3>
 		<div class="card-text">
-			<form>
+			<form [formGroup]="signinForm" (ngSubmit)="loginUser()">
 				<div class="form-group" >
 					<label for="exampleInputEmail1">Email address</label>
-					<input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+					<input type="email" class="form-control form-control-sm" id="exampleInputEmail1" formControlName="email" [ngClass]="{ 'is-invalid': submitted && formControl.email.errors }" >
+					<div *ngIf="submitted && formControl.email.errors" class="invalid-feedback">
+						<div *ngIf="formControl.email.errors.required">Email is required</div>
+						<div *ngIf="formControl.email.errors.email">Email must be a valid email address</div>
+					</div>
 				</div>
 				<div class="form-group" id="input">
 					<label for="exampleInputPassword1">Password</label>
 					<a href="#" style="float:right;font-size:12px;">Forgot password?</a>
-					<input type="password" class="form-control form-control-sm" id="exampleInputPassword1">
+					<input type="password" class="form-control form-control-sm" id="exampleInputPassword1" formControlName="password" [ngClass]="{ 'is-invalid': submitted && formControl.password.errors }">
+					<div *ngIf="submitted && formControl.password.errors" class="invalid-feedback">
+						<div *ngIf="formControl.password.errors.required">Password is required</div>
+						<div *ngIf="formControl.password.errors.minlength">Password must be at least 6 characters</div>
+					</div>
 				</div>
 				<button id="signUp" type="submit" class="btn btn-block">Sign in</button>
 				

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" id="header-bar">
+<nav class="navbar navbar-expand-lg" id="header-bar" *ngIf="router.url !== '/Dashboard/home'">
     <div class="container-fluid">
       <a class="navbar-brand" (click)="isCollapsed = !isCollapsed" href="#" id="logo">KP <span>Initiatives</span></a>
       <button id="toggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

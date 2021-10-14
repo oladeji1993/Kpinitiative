@@ -22,8 +22,12 @@
     color:White; 
     font-weight:500; 
     font-size:3rem;
-    // margin-bottom:10px; 
+    margin-bottom:38px; 
     text-shadow: 2px 3px rgba(247, 5, 146, 0.5)
+}
+
+.sub-header{
+    margin-bottom:30px
 }
 
 #welcome-text{
@@ -76,8 +80,14 @@
     // text-shadow: 2px 3px rgba(250, 51, 6, 0.5)
 }
 
-#login{
-    margin-top:15px
+// #login{
+//     margin-top:15px
+// }
+
 }
 
+@media (max-width: 400px) {
+    #login{
+    margin-top:15px
+}
 }

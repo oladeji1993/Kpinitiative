@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -33,7 +34,15 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
-  ]
+    HomeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+
+  ],
+  providers: [
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class HomeModule { }

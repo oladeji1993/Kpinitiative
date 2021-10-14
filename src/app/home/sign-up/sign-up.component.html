@@ -1,13 +1,16 @@
 <div class="global-container">
 	<div class="card login-form">
 	<div class="card-body">
-		<h3 class="card-title text-center" style="font-size: 30px; font-weight: bold; ">SignUp</h3>
+		<h4 class="card-title text-center" style="font-size: 20px; font-weight: bold; ">SignUp</h4>
 		<div class="card-text">
-			<form>
+			<form [formGroup]="registerForm">
                 <div class="row">
                     <div class="col-md-12" style="padding:0px 5px !important;"> 
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-sm" placeholder="First Name" id="firstname">
+                            <input type="text" class="form-control form-control-sm" placeholder="FullName" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('fullName')?.invalid}" id="firstname">
+                            <div *ngIf="submitted && registerForm.get('fullName')?.invalid" class="invalid-feedback">
+                                <div  *ngIf="registerForm.get('fullName')?.hasError('required')">FullName is required</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -15,7 +18,10 @@
                 <div class="row" id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-sm" id="lastname" placeholder="Last Name">
+                            <input type="text" class="form-control form-control-sm" placeholder="Username" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('userName')?.invalid}">
+                            <div *ngIf="submitted && registerForm.get('userName')?.invalid" class="invalid-feedback">
+                                <div *ngIf="registerForm.get('userName')?.hasError('required')">UserName is required</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -23,7 +29,11 @@
                 <div class="row" id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-sm" id="lastname" placeholder="Username">
+                            <input type="number" class="form-control form-control-sm" formControlName="phonenumber" placeholder="Phone number" [ngClass]="{ 'is-invalid': submitted && formControl.phonenumber.errors }">
+                            <div *ngIf="submitted && formControl.phonenumber.errors" class="invalid-feedback">
+                                <div *ngIf="formControl.phonenumber.errors.required">Phone number is required</div>
+                                <div *ngIf="formControl.phonenumber.errors.pattern">Phone number must be at least 11 characters</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -31,15 +41,7 @@
                 <div class="row" id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group">
-                            <input type="number" class="form-control form-control-sm" id="lastname" placeholder="Phone number">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" id="input_field">
-                    <div class="col-md-12" style="padding:0px 5px !important;">
-                        <div class="form-group">
-                            <input type="text" class="form-control form-control-sm" id="lastname" placeholder="Referral Username [optional]">
+                            <input type="text" class="form-control form-control-sm" placeholder="Referral Username [optional]">
                         </div>
                     </div>
                 </div>
@@ -47,7 +49,11 @@
                 <div class="row" id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group" >
-                            <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"  placeholder="Email address" aria-describedby="emailHelp">
+                            <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"  placeholder="Email address" aria-describedby="emailHelp" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('email')?.invalid}">
+                            <div *ngIf="submitted && registerForm.get('email')?.invalid" class="invalid-feedback">
+                                <div *ngIf="registerForm.get('email')?.hasError('required')">Email is required</div>
+                                <div *ngIf="registerForm.get('email')?.hasError('email')">Email must be a valid email address</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,7 +61,11 @@
                 <div class="row"  id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group" >
-                            <input type="password" class="form-control form-control-sm" id="password" placeholder="Password" aria-describedby="emailHelp">
+                            <input type="password" class="form-control form-control-sm" id="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('password')?.invalid}">
+                            <div *ngIf="submitted && registerForm.get('password')?.invalid" class="invalid-feedback">
+                                <div *ngIf="registerForm.get('password')?.hasError('required')">Password is required</div>
+                                <div  *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,16 +73,20 @@
                 <div class="row"  id="input_field">
                     <div class="col-md-12" style="padding:0px 5px !important;">
                         <div class="form-group" >
-                            <input type="password" class="form-control form-control-sm" id="confirmpassword" placeholder=" Confirm Password" aria-describedby="emailHelp">
+                            <input type="password" class="form-control form-control-sm" id="confirmpassword" formControlName="confirmPassword" placeholder=" Confirm Password" [ngClass]="{ 'is-invalid': submitted &&  registerForm.get('confirmPassword')?.invalid}">
+                            <div *ngIf="submitted && formControl.confirmPassword.errors" class="invalid-feedback">
+                                <div *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Confirm Password is required</div>
+                                <div *ngIf="registerForm.get('confirmPassword')?.hasError('mustMatch')">Passwords must match</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                
-				<button id="login" type="submit" class="btn btn-block">REGISTER</button>
 				
 				<div class="sign-up" style="display: flex;">
 					You have an account? <div class="px-4" style="text-decoration: underline; color:blue; cursor: pointer;" (click)="login()">Login</div>
 				</div>
+                <button id="login" (click)="registerUser()" type="submit" class="btn btn-block">REGISTER</button>
 			</form>
 		</div>
 	</div>
