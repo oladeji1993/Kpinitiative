@@ -1,1 +1,85 @@
-<p>home works!</p>
+<div class="single-container">
+    <div class="row" style="justify-content: center; margin-top:4%">
+        <div class="col-sm-3"  style="cursor:pointer">
+            <div class="content-container">
+                <div style="display: flex; justify-content: space-between !important;">
+                    <div>
+                        <div style=" font-size:25px; font-weight:600">5</div>
+                        <div class="pt-2" style="color:#B5861E; font-size:14px">DATA HISTORY</div>
+                    </div>
+                    <div style="border-radius: 5px;"><i style="font-size: 25px;" class="fas fa-wifi"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3" style="cursor:pointer">
+            <div class="content-container">
+                <div style="display: flex; justify-content: space-between !important;">
+                    <div>
+                        <div style=" font-size:25px; font-weight:600">10</div>
+                        <div class="pt-2" style="color:#B5861E; font-size:14px">AIRTIME HISTORY</div>
+                    </div>
+                    <div style=" border-radius: 5px;"><i style="font-size: 25px;" class="fas fa-mobile-alt"></i></div>
+                </div>
+            </div>
+        </div>
+        <div style="cursor:pointer" class="col-sm-3">
+            <div class="content-container">
+                <div style="display: flex; justify-content: space-between !important;">
+                    <div>
+                        <div style=" font-size:25px; font-weight:600">15</div>
+                        <div class="pt-2" style="color:#B5861E; font-size:14px">CABLE HISTORY</div>
+                    </div>
+                    <div style=" border-radius: 5px;"><i style="font-size: 25px;"  class="fas fa-tv"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"  style="cursor:pointer">
+            <div class="content-container">
+                <div style="display: flex; justify-content: space-between !important;">
+                    <div>
+                        <div style=" font-size:25px; font-weight:600">50</div>
+                        <div class="pt-2" style="color:#B5861E; font-size:14px">ELECTRICITY HISTORY</div>
+                    </div>
+                    <div style=" border-radius: 5px;"><i style="font-size: 25px;"  class="fas fa-lightbulb"></i></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-history" style="font-size: 20px; padding:20px 0px">Transaction History</div>
+    <div class="mt-2">  
+        <div class="recent-grid" >
+            <div class="projects">
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-body"  > -->
+                        <div class="table-responsive">
+                            <table width="100%">
+                                <thead style="background: #ea166b; color:white; font-size:15px;padding:10px;">
+                                    <tr style="padding:30px">
+                                        <!-- <td>S/N</td> -->
+                                        <td>Transaction Type</td>    
+                                        <td>Amount</td>
+                                        <td>Network</td>
+                                        <td>Date</td>    
+                                         
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let Member of Members | paginate : {itemsPerPage:8, currentPage:p} index as i">
+                                        <!-- <td>{{i + 1}}</td> -->
+                                        <!-- <td style="color:#00356B">{{Member.fullname}}</td> -->
+                                        <td>{{Member.transaction}}</td>
+                                        <td>{{Member.amount}}</td>
+                                        <td>{{Member.network}}</td>
+                                        <td>{{Member.date}}</td>
+                                    </tr>
+                                </tbody>
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </table>
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div> 
+    </div>

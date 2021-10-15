@@ -1,1 +1,38 @@
-<p>nav works!</p>
+<div>
+    <div class="logo pt-4" style="width:100%; text-align: center;">
+        <a class="navbar-brand" href="#" id="logo">KP <span>Initiatives</span></a>
+    </div>
+    <div class="mt-5">
+        <div mat-list-item [routerLink]="['/Dashboard/home']" style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-tachometer-alt"></i>
+            <a style="text-decoration: none; color:#fff; line-height: 1; font-size: 14px;cursor:pointer">Dashboard</a>
+        </div>
+        <div mat-list-item [routerLink]="['./data']" routerLinkActive="is-active"  style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-wifi"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;cursor:pointer">Data</a>
+        </div>
+
+        <div mat-list-item [routerLink]="['/Dashboard/airtime']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-mobile-alt"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;">Airtime</a>
+        </div>
+
+        <div  [routerLink]="['/Dashboard/wallet']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-money-check-alt"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;">Fund wallet</a>
+        </div>
+        <div  [routerLink]="['/Dashboard/electricity']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-lightbulb"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;">Electricity Bill</a>
+        </div>
+
+        <div  [routerLink]="['/Dashboard/cable']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-tv"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;">Cable Subscription</a>
+        </div>
+        <div  [routerLink]="['']" style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+            <i style="color:#fff; padding-right:10px" class="fas fa-sign-out-alt"></i>
+            <a style="text-decoration: none; color:#fff; font-size: 14px;cursor:pointer">Logout</a>
+        </div>
+    </div>
+</div>

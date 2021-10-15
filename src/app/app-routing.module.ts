@@ -12,12 +12,14 @@ const routes: Routes =
       path: 'home', 
       loadChildren: () => import('./home/home.module').then(m => m.HomeModule) 
       },
-    { path: 'Dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+    { path: 'Dashboard', 
+      loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) 
+    },
 
-      // {
-      //   path: '**',
-      //   redirectTo: 'home'
-      // }
+      {
+        path: '**',
+        redirectTo: 'home'
+      }
     ];
 
 @NgModule({

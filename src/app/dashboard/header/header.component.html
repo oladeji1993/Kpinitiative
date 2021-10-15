@@ -1,1 +1,64 @@
-<p>header works!</p>
+<div class="nav white lighten-4 top-nav mr-1" id="nav-header">
+    <div (click)="sideBar()" class="toggler"><i class="fas fa-bars"></i></div>
+    <div class="h-container" style="display:flex; justify-content: space-evenly;">
+        <div class="header-name">Dashboard</div>
+        <!-- <div class="header-search"><input type="text"></div> -->
+    </div>
+
+    
+    <div class="h-container"  style="display: flex;">
+        <div class="date">29th march</div>
+        <div class="mgt-img"></div>
+    </div>
+
+
+
+
+    <div class="nav-item" dropdown>
+        <a dropdownToggle mdbWavesEffect class="nav-link active" mdbWavesEffect>
+            Hi, user</a> 
+    </div>
+    
+</div>
+
+
+<div class="sidebar">
+    <div>
+        <div class="logo pt-4" style="width:100%; text-align: center;">
+            <a class="navbar-brand" href="#" id="logo">KP <span>Initiatives</span></a>
+        </div>
+        <div class="mt-5">
+            <div mat-list-item [routerLink]="['/Dashboard/home']" (click)="removeSideBar()" style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-tachometer-alt"></i>
+                <a style="text-decoration: none; color:#fff; line-height: 1; font-size: 14px;cursor:pointer">Dashboard</a>
+            </div>
+            <div mat-list-item [routerLink]="['./data']" (click)="removeSideBar()" routerLinkActive="is-active"  style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-wifi"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;cursor:pointer">Data</a>
+            </div>
+    
+            <div mat-list-item [routerLink]="['/Dashboard/airtime']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-mobile-alt"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;">Airtime</a>
+            </div>
+    
+            <div  [routerLink]="['/Dashboard/wallet']" (click)="removeSideBar()" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-money-check-alt"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;">Fund wallet</a>
+            </div>
+            <div  [routerLink]="['/Dashboard/electricity']" (click)="removeSideBar()" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-lightbulb"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;">Electricity Bill</a>
+            </div>
+    
+            <div  [routerLink]="['/Dashboard/cable']" (click)="removeSideBar()" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-tv"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;">Cable Subscription</a>
+            </div>
+            <div  [routerLink]="['']" style="padding-top: 13px; padding-bottom: 13px; padding-left:40px;cursor:pointer" class="menu">
+                <i style="color:#fff; padding-right:10px" class="fas fa-sign-out-alt"></i>
+                <a style="text-decoration: none; color:#fff; font-size: 14px;cursor:pointer">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
