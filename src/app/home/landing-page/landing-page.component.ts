@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { AlertService } from 'src/app/Services/alert/alert.service';
+
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr: ToastrService,
+    ) {}
 
   ngOnInit(): void {
+    
   }
 
 }

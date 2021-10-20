@@ -37,7 +37,7 @@
                 <a style="text-decoration: none; color:#fff; font-size: 14px;cursor:pointer">Data</a>
             </div>
     
-            <div mat-list-item [routerLink]="['/Dashboard/airtime']" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
+            <div mat-list-item [routerLink]="['/Dashboard/airtime']" (click)="removeSideBar()" routerLinkActive="is-active" style="padding-top: 13px; padding-bottom: 13px; cursor:pointer;  padding-left:40px;" class="menu">
                 <i style="color:#fff; padding-right:10px" class="fas fa-mobile-alt"></i>
                 <a style="text-decoration: none; color:#fff; font-size: 14px;">Airtime</a>
             </div>
